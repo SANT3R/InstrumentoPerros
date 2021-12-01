@@ -6,12 +6,19 @@ const btn_1 = document.getElementById('btn_1');
 const btn_3 = document.getElementById('btn_3');
 const btn_9 = document.getElementById('btn_9');
 const btn_12 = document.getElementById('btn_12');
+const valor= document.getElementById('valor');
 let numero=0;
 
 btn_1.addEventListener('click', Boton1);
 btn_3.addEventListener('click', Boton2);
 btn_9.addEventListener('click', Boton3);
 btn_12.addEventListener('click', Boton4);
+valor.addEventListener('keyup', function (e) {
+    if(e.keyCode===13){
+        numero= valor.value;
+        Repetir();
+    }
+});
 
 function Repetir(){
     for (let i = 0; i < numero; i++) {

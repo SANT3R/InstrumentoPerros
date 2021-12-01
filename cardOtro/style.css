@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    height: 8rem;
+    width: 100%;
+    background-color: rgb(34, 32, 32);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+nav{
+    height: 3rem;
+    width: 100%;
+    background-color: rgb(54, 52, 52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width: 80em;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 15px;
+}
+
+img{
+    height: 15em;
+    width: 15em;
+}
+
+/*clases*/
+.card{
+    margin: 0.5em 1px;
+    height: 20em;
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(54, 52, 52);
+}

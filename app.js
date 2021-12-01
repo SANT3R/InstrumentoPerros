@@ -6,57 +6,50 @@ const btn_1 = document.getElementById('btn_1');
 const btn_3 = document.getElementById('btn_3');
 const btn_9 = document.getElementById('btn_9');
 const btn_12 = document.getElementById('btn_12');
+let numero=0;
 
-btn_1.addEventListener('click', FechtApi);
-btn_3.addEventListener('click', FechtApi3);
-btn_9.addEventListener('click', FechtApi9);
-btn_12.addEventListener('click', FechtApi12);
+btn_1.addEventListener('click', Boton1);
+btn_3.addEventListener('click', Boton2);
+btn_9.addEventListener('click', Boton3);
+btn_12.addEventListener('click', Boton4);
 
-
-function CreateCard1(perro, tin) {
-    console.log(tin);
+function Repetir(){
     for (let i = 0; i < numero; i++) {
-        let clone_template = document.importNode(template_card, true);
-        clone_template.querySelector(".img-card").setAttribute("src", perro.message);
-        fragment.appendChild(clone_template);
-        main_card.appendChild(fragment);
+        main_card.innerHTML = '';
+        FechtApi();
     }
+}
+
+function CreateCard(perro, tin) {
+    let clone_template = document.importNode(template_card, true);
+    clone_template.querySelector(".img-card").setAttribute("src", perro.message);
+    fragment.appendChild(clone_template);
+    main_card.appendChild(fragment);
 }
 
 function FechtApi() {
     fetch(URL)
     .then(response => response.json())
     .then(card => {
-        main_card.innerHTML = '';
         CreateCard(card)
     })
 }
 
-function FechtApi3() {
-    let numero=3;
-    fetch(URL)
-    .then(response => response.json())
-    .then(card => {
-        main_card.innerHTML = '';
-        CreateCard(card)
-    })
-}
-function FechtApi9() {
-    let numero=9;
-    fetch(URL)
-    .then(response => response.json())
-    .then(card => {
-        main_card.innerHTML = '';
-        CreateCard(card)
-    })
+function Boton1(){
+    numero=1;
+    Repetir();
 }
 
-function FechtApi12() {
-    let numero=12;
-    fetch(URL)
-    .then(response => response.json())
-    .then(card => {
-        main_card.innerHTML = '';
-        CreateCard(card)
-    })
+function Boton2() {
+    numero=3;
+    Repetir();
+}
+function Boton3() {
+    numero=9;
+    Repetir();
+}
+
+function Boton4() {
+    numero=12;
+    Repetir();
 }
